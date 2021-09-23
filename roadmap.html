@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jiwoo's Homepage</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/main.js"></script>
+    <style>
+    section.roadmap{
+        background-color:salmon;
+    }
+
+    h1 {
+    height: 20px;
+    
+    }
+
+    h1 span {
+    position:relative;
+    top: 20px;
+    display: inline-block;
+    animation: bounce .4s ease infinite alternate;
+    font-family: 'Titan One', cursive; 
+    font-size: 70px;
+    color: #FFF;
+    text-shadow: 0 1px 0 #CCC,
+                 0 2px 0 #CCC,
+                 0 3px 0 #CCC,
+                 0 4px 0 #CCC,
+                 0 5px 0 #CCC,
+                 0 6px 0 transparent,
+                 0 7px 0 transparent,
+                 0 8px 0 transparent,
+                 0 9px 0 transparent,
+                 0 10px 10px rgba(0, 0, 0, .4);
+    }
+
+    h1 span:nth-child(2) { animation-delay: .1s; }
+    h1 span:nth-child(3) { animation-delay: .2s; }
+    h1 span:nth-child(4) { animation-delay: .3s; }
+    h1 span:nth-child(5) { animation-delay: .4s; }
+    h1 span:nth-child(6) { animation-delay: .5s; }
+    h1 span:nth-child(7) { animation-delay: .6s; }
+    h1 span:nth-child(8) { animation-delay: .7s; }
+
+@keyframes bounce {
+  100% {
+    top: -20px;
+    text-shadow: 0 1px 0 #CCC,
+                 0 2px 0 #CCC,
+                 0 3px 0 #CCC,
+                 0 4px 0 #CCC,
+                 0 5px 0 #CCC,
+                 0 6px 0 #CCC,
+                 0 7px 0 #CCC,
+                 0 8px 0 #CCC,
+                 0 9px 0 #CCC,
+                 0 50px 25px rgba(0, 0, 0, .2);
+    }
+}   
+  .bar {
+    width: 200px;
+    height: 200px;
+    background-color:pink;
+    border: 3px solid purple;
+    margin: 25px;
+    float:left;
+    border-radius: 50%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+  }
+    </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header>
+                <!-- <h1><a href="index.html">YuJiwoo</a></h1> -->
+                <h1>
+                    <span>r</span>
+                    <span>o</span>
+                    <span>a</span>
+                    <span>d</span>
+                    <span>m</span>
+                    <span>a</span>
+                    <span>p</span>
+                  </h1>
+                <nav>
+                    <h2 class="hidden">navigation</h2>
+                    <ul class="gnb">
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT ME</a></li>
+                        <li><a href="content.html">CONTENT</a></li>
+                        <li class="on"><a href="roadmap.html">ROADMAP</a></li>
+                    </ul>
+                </nav>
+                <div class="h_right">
+                    <a href="login.html">login</a>
+                    <a href="join.html">join</a>
+                </div>
+            </header>
+            <section class="content roadmap">
+                <h2 class="hidden">ROADMAP</h2>
+                <div class="content_wrap">
+                    <ul class="content_box">
+                        
+                            <div class="bar"><center><b>2021</b><br>kh정보교육원 교육과정을 열심히 공부하고 수료한다</center></div>
+                            <div class="bar"><center><b>2023</b><br>취직을 하고 1년이 지나 신입이지만 열심히 일하고 있습니다 </center></div>
+                            <div class="bar"><center><b>2025</b><br>개발은 꾸준히 공부를 해야 하기에 게을리 하지 않고 점점 업무도 익숙해지고 적응해나간다.</center></div>
+                            <div class="bar"><center><b>2030</b><br>업계에서 인정을 받고 프로젝트에 참여하며 개발한다.</center></div>
+                        
+                    </ul>
+                </div>
+            </section>
+            <footer>
+                <h2 class="hidden">footer</h2>
+                Copyright 2021 &copy; All Rights Reserved
+            </footer>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

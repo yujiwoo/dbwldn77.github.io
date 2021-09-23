@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jiwoo's Homepage</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/main.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1><a href="index.html">YuJiwoo</a></h1>
+            <div class="h_right">
+                <a href="login.html">login</a>
+                <a class="on" href="join.html">join</a>
+            </div>
+        </header>
+        <section class="join">
+            <h2 class="hidden">join</h2>
+            <div class="content_wrap">
+                <form action="javascript:saveGuestbook();" name="guestbookFrm" id="guestbook" method="post">
+                    <input type="text" id="userid" placeholder="id">
+                    <input type="text" id="username" placeholder="name">
+                    <input type="password" id="userpw" placeholder="password *영어,숫자 포함 8자리 이상">
+                    <input type="password" id="userpw_ck" placeholder="password check">
+                    <input type="text" id="phone" placeholder="phone">
+                    <input type="text" id="address" placeholder="address"><button type="button" class="find_btn" id="address_kakao" >find</button>
+                    <input type="text" id="address_detail" placeholder="detail address">
+                    <button type="submit" class="login_btn" value="저장">Join</button>
+                </form>
+            </div>
+        </section>
+        <footer>
+            <h2 class="hidden">footer</h2>
+            Copyright 2021 &copy; All Rights Reserved
+        </footer>
+        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+        <script>
+        window.onload = function(){
+            document.getElementById("address_kakao").addEventListener("click", function(){ //주소입력칸을 클릭하면
+                //카카오 지도 발생
+                new daum.Postcode({
+                    oncomplete: function(data) { //선택시 입력값 세팅
+                        document.getElementById("address").value = data.address;//주소 넣기 
+                        // document.querySelector("input[name=address_detail]").focus(); //상세입력 포커싱
+                    }
+                }).open();
+            });
+ 
+        }
+        </script>
+        <script>
+          function GuestbookEntry(userid,username,userpw,userpw_ck,phone,address,address_detail){
+          this.userid = userid;
+          this.username = username;
+          this.userpw = userpw;
+          this.userpw_ck = userpw_ck;
+          this.phone = phone;
+          this.address = address;
+          this.address_detail = address_detail;
+           
+        }
+        const displayGuestbook =  () => {
+
+        };
+
+        const saveGuestbook= () => {
+        // 1. localStorage에 저장
+        const entry = new GuestbookEntry(userid.value, username.value, userpw.value,userpw_ck.value,phone.value, address.value,address_detail.value);
+        const entries = JSON.parse(localStorage.getItem('entries')) || [];
+        entries.push(entry);
+
+       
+         localStorage.setItem('member', JSON.stringify(entries));
+
+        displayGuestbook();
+
+        // 3. 폼 초기화
+        document.guestbookFrm.reset();
+         
+  };
+  document.guestbookFrm.onsubmit = function(){
+      var userid = /^[a-zA-Z0-9]{4,12}$/; 
+  
+
+        var userid = document.getElementById("userid");
+        var username = document.getElementById("username");
+        var userpw = document.getElementById("userpw");
+        var userpw_ck = document.getElementById("userpw_ck");
+        var phone = document.getElementById("phone")
+        var address = document.getElementById("address");
+        var address_detail = document.getElementById("address_detail");
+
+     
+       if(userid.value=="") {
+           alert("아이디를 입력해 주세요");
+           userid.focus();
+           return false;
+       }
+
+       if(username.value=="") {
+           alert("이름을 입력해 주세요");
+           username.focus();
+           return false;
+       }
+
+       
+       if(userpw.value=="") {
+           alert("비밀번호를 입력해 주세요");
+           userpw.focus();
+           return false;
+       }
+
+       if(userpw.value != userpw_ck.value) {
+           alert("비밀번호가 다릅니다. 다시 확인해 주세요.");
+           userpw.value = "";
+           userpw_ck.focus();
+           return false;
+       }
+       
+       if(phone.value=="") {
+           alert("전화번호를 입력해 주세요");
+           phone.focus();
+           return false;
+       }
+       
+       if(address.value=="") {
+           alert("주소를 입력해 주세요");
+           address.focus();
+           return false;
+       }
+
+
+        alert("회원가입이 완료되었습니다.");
+   }
+
+   function check(re, what, message) {
+       if(re.test(what.value)) {
+           return true;
+       }
+       alert(message);
+       what.value = "";
+       what.focus();
+       //return false;
+   }
+  
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jiwoo's Homepage</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/main.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <h1><a href="index.html">YuJiwoo</a></h1>
+            <div class="h_right">
+                <a class="on" href="login.html">login</a>
+                <a href="join.html">join</a>
+            </div>
+        </header>
+        <section class="login">
+            <h2 class="hidden">login</h2>
+            <div class="content_wrap">
+                <form action="login.js;" method="post">
+                    <input type="text" id="userid" placeholder="id">
+                    <input type="password" id="userpw" placeholder="password">
+                    <a href="#" class="login_find">find id/pw</a><a href="join.html" class="login_find">join</a>
+                    <button type="submit" class="login_btn">Login</button>
+                </form>
+                
+            </div>
+        </section>
+        <footer>
+            <h2 class="hidden">footer</h2>
+            Copyright 2021 &copy; All Rights Reserved
+        </footer>
+        <script>
+             window.onload = function(){
+             localStorage();
+             document.querySelector("form").onsubmit = saveStorage;
+             };
+            function saveStorage(){
+                var saveid = document.getElementById("saveid").checked;
+                var userid = document.getElementById("userid").checked;
+            }    
+           function checkValue()
+        {
+            const id = check_id.value;
+            const password = check_password.value;
+            if(localStorage.getItem(userid) == userpw){
+                alert("로그인 성공");
+        }else{
+            alert("로그인 실패");
+        }
+        
+            }
+            inputForm = eval("document.loginInfo");
+             
+           if(userid.value=="") {
+           alert("아이디를 입력해 주세요");
+           userid.focus();
+           return false;
+       }
+           if(userpw.value=="") {
+           alert("비밀번호를 입력해 주세요");
+           userid.focus();
+           return false;
+       }
+
+    
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
